@@ -1,4 +1,4 @@
-###Example React Hook With Effects
+### Example React Hook With Effects
 
 This quick application was created to demonstrate using React hooks with effects, specifically using the hooks with setInterval triggered by an event.
 
