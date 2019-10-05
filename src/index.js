@@ -4,8 +4,10 @@ import ReactDOM from "react-dom";
 import "./styles.css";
 
 const Stopwatch = () => {
-  const [elapsed, setElapsed] = useState(0);
+  const [elapsed, setElapsed] = useState(0); // Elapsed time for the timer, in milliseconds
+  const [startTime, setStartTime] = useState(null); // Start time for the running timing session
   const [running, setRunning] = useState(false);
+  const [clearing, setClearing] = useState(false);
 
   const formatTime = time => {
     const milliseconds = time % 1000;
@@ -22,13 +24,9 @@ const Stopwatch = () => {
     let interval = null;
 
     if (running) {
-      let startTime = new Date().getTime();
-
       interval = setInterval(() => {
-        let endTime = new Date().getTime();
-        setElapsed(elapsed => elapsed + (endTime - startTime));
-        startTime = endTime;
-      });
+        setElapsed(new Date() - startTime);
+      }, 10);
     } else {
       clearInterval(interval);
     }
@@ -36,15 +34,27 @@ const Stopwatch = () => {
     return () => {
       clearInterval(interval);
     };
-  }, [elapsed, running]);
+  }, [running, startTime]);
+
+  // Required to correctly clear the timer if the user
+  // hits the "clear" button while the timer is running
+  useEffect(() => {
+    setElapsed(0);
+    setClearing(false);
+  }, [clearing]);
 
   const handleStart = () => {
+    // If this button was clicked while the timer is stopped,
+    // record the current time minus any previously elapsed time
+    if (!running) setStartTime(new Date().getTime() - elapsed);
+
+    // Toggle the running flag
     setRunning(!running);
   };
 
   const handleClear = () => {
     setRunning(false);
-    setElapsed(0);
+    setClearing(true);
   };
 
   return (
