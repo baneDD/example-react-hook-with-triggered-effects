@@ -2,16 +2,21 @@
 
 .App {
   text-align: center;
-  width: 300px;
+  max-width: 300px;
   margin: 0 auto;
   padding: 0 20px 12px 20px;
   border: 1px solid black;
+  border-radius: 0.4em;
+
+  @media (max-width: 340px) {
+    width: 100%;
+  }
 }
 
 h3 {
   text-transform: uppercase;
   font-family: "Cherry Swash", sans-serif;
-  font-size: 40px;
+  font-size: 2.4em;
   color: #1204db;
   border-bottom: 4px double #fd0101;
   margin: 12px 0;
@@ -25,22 +30,21 @@ h3 {
 
 .monitor {
   display: inline-block;
-  width: 300px;
-  height: 40px;
+  width: 100%;
+  height: 1.55em;
   border: 2px solid #0a0370;
   background: #c7fafc;
   color: #0a0370;
   font-family: "Roboto Mono", "Courier New";
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 1.8em;
   box-sizing: border-box;
 }
 
 button {
-  width: 300px;
-  height: 30px;
+  width: 100%;
+  height: 1.6em;
   background: #bbb;
-  font-size: 20px;
+  font-size: 1.2em;
   font-family: "Cherry Swash", sans-serif;
   transition: background-color 0.3s;
   cursor: pointer;
@@ -64,6 +68,6 @@ button.green:hover {
 
 .monitor,
 button {
-  margin-bottom: 10px;
-  border-radius: 5px;
+  margin-bottom: 0.6em;
+  border-radius: 0.25em;
 }
