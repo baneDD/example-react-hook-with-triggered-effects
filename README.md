@@ -2,4 +2,4 @@
 
 This quick application was created to demonstrate using React hooks with effects, specifically using the hooks with setInterval triggered by an event.
 
-Play with this code on [Codesandbox](https://codesandbox.io/s/timer-hook-z8z73)
+Play with this code on [Codesandbox](https://codesandbox.io/s/github/baneDD/example-react-hook-with-triggered-effects)
