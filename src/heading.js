@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Heading = ({ title }) => {
   return <h3>{title}</h3>;

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Cherry+Swash|Roboto+Mono&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Cherry+Swash|Roboto+Mono&display=swap');
 
 .App {
   text-align: center;
@@ -15,7 +15,7 @@
 
 h3 {
   text-transform: uppercase;
-  font-family: "Cherry Swash", sans-serif;
+  font-family: 'Cherry Swash', sans-serif;
   font-size: 2.4em;
   color: #1204db;
   border-bottom: 4px double #fd0101;
@@ -35,7 +35,7 @@ h3 {
   border: 2px solid #0a0370;
   background: #c7fafc;
   color: #0a0370;
-  font-family: "Roboto Mono", "Courier New";
+  font-family: 'Roboto Mono', 'Courier New';
   font-size: 1.8em;
   box-sizing: border-box;
 }
@@ -45,7 +45,7 @@ button {
   height: 1.6em;
   background: #bbb;
   font-size: 1.2em;
-  font-family: "Cherry Swash", sans-serif;
+  font-family: 'Cherry Swash', sans-serif;
   transition: background-color 0.3s;
   cursor: pointer;
 }

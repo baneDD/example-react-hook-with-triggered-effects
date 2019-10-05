@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 const Stopwatch = () => {
   const [elapsed, setElapsed] = useState(0); // Elapsed time for the timer, in milliseconds
@@ -12,9 +12,9 @@ const Stopwatch = () => {
     const seconds = totalSeconds % 60;
     const minutes = Math.floor(totalSeconds / 60);
 
-    return `${("00" + minutes).slice(-2)}:${("00" + seconds).slice(-2)}:${(
-      "000" + milliseconds
-    ).slice(-3)}`;
+    return `${('00' + minutes).slice(-2)}:${('00' + seconds).slice(
+      -2,
+    )}:${('000' + milliseconds).slice(-3)}`;
   };
 
   useEffect(() => {
@@ -57,8 +57,11 @@ const Stopwatch = () => {
   return (
     <div className="container">
       <div className="monitor">{formatTime(elapsed)}</div>
-      <button className={running ? "red" : "green"} onClick={handleStart}>
-        {running ? "Stop" : "Start"}
+      <button
+        className={running ? 'red' : 'green'}
+        onClick={handleStart}
+      >
+        {running ? 'Stop' : 'Start'}
       </button>
       <button className="red" onClick={handleClear}>
         Clear
